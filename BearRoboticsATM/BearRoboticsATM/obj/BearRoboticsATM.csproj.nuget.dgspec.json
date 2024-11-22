@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\clapp\\source\\repos\\BearRoboticsATM\\BearRoboticsATM\\BearRoboticsATM.csproj": {}
+    "C:\\Users\\clapp\\source\\repos\\BearRoboticsATM\\BearRoboticsATM\\BearRoboticsATM\\BearRoboticsATM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\clapp\\source\\repos\\BearRoboticsATM\\BearRoboticsATM\\BearRoboticsATM.csproj": {
+    "C:\\Users\\clapp\\source\\repos\\BearRoboticsATM\\BearRoboticsATM\\BearRoboticsATM\\BearRoboticsATM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\clapp\\source\\repos\\BearRoboticsATM\\BearRoboticsATM\\BearRoboticsATM.csproj",
+        "projectUniqueName": "C:\\Users\\clapp\\source\\repos\\BearRoboticsATM\\BearRoboticsATM\\BearRoboticsATM\\BearRoboticsATM.csproj",
         "projectName": "BearRoboticsATM",
-        "projectPath": "C:\\Users\\clapp\\source\\repos\\BearRoboticsATM\\BearRoboticsATM\\BearRoboticsATM.csproj",
+        "projectPath": "C:\\Users\\clapp\\source\\repos\\BearRoboticsATM\\BearRoboticsATM\\BearRoboticsATM\\BearRoboticsATM.csproj",
         "packagesPath": "C:\\Users\\clapp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\clapp\\source\\repos\\BearRoboticsATM\\BearRoboticsATM\\obj\\",
+        "outputPath": "C:\\Users\\clapp\\source\\repos\\BearRoboticsATM\\BearRoboticsATM\\BearRoboticsATM\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

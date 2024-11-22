@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9SyAxnSsGnU=",
+  "dgSpecHash": "BuOzwnjuZTA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\clapp\\source\\repos\\BearRoboticsATM\\BearRoboticsATM\\BearRoboticsATM.csproj",
+  "projectFilePath": "C:\\Users\\clapp\\source\\repos\\BearRoboticsATM\\BearRoboticsATM\\BearRoboticsATM\\BearRoboticsATM.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\clapp\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.0\\microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
     "C:\\Users\\clapp\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512",
