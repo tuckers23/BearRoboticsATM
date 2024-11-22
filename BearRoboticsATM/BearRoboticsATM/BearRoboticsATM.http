@@ -1,0 +1,6 @@
+@BearRoboticsATM_HostAddress = http://localhost:5086
+
+GET {{BearRoboticsATM_HostAddress}}/atm/
+Accept: application/json
+
+###
