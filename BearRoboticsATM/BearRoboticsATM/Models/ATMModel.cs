@@ -6,15 +6,12 @@ namespace BearRoboticsATM.Models
         private List<string> acceptedBanks = new List<string>();
         private string[] atmActions = new string[] { "See Balance", "Deposit", "Withdraw" };
         private BankCardModel? activeCard = null;
+        private int cashBinAmount;
 
-        public ATMModel(List<string> acceptedBanks)
+        public ATMModel(List<string> acceptedBanks, int cashBinAmount)
         {
             this.acceptedBanks = acceptedBanks;
-        }
-
-        public void AddBank(string bank)
-        {
-            this.acceptedBanks.Add(bank);
+            this.cashBinAmount = cashBinAmount;
         }
 
         public void InsertCard(BankCardModel bankCard)
@@ -24,8 +21,6 @@ namespace BearRoboticsATM.Models
                 if(bankCard.IsValidCard())
                 {
                     //todo: prompt for pin
-                    //if pin match
-                    SuccessfulLogin(bankCard);
                 }
                 else
                 {
@@ -36,12 +31,68 @@ namespace BearRoboticsATM.Models
 
         public bool InputPin(BankCardModel bankCard, int pin)
         {
-            return bankCard.CheckPIN(pin);
+            if(bankCard.CheckPIN(pin))
+            {
+                this.activeCard = bankCard;
+                return true;
+            }
+            return false;
         }
 
-        public void SuccessfulLogin(BankCardModel bankCard)
+        public List<AccountModel> SuccessfulLogin()
         {
-            this.activeCard = bankCard;
+            return this.activeCard.GetAccounts();
+        }
+
+        public void SelectAccount(AccountModel account)
+        {
+            this.activeCard.SelectAccount(account);
+        }
+
+        public void WithdrawCash(int amount)
+        {
+            if(amount> this.cashBinAmount)
+            {
+                //todo: logic for cashBin check
+            }
+            this.activeCard.GetActiveAccount().Withdraw(amount);
+            this.cashBinAmount -= amount;
+        }
+
+        public void DepositCash(int amount)
+        {
+            this.activeCard.GetActiveAccount().Deposit(amount);
+            this.cashBinAmount += amount;
+        }
+
+        public string[] GetATMActions()
+        {
+            return this.atmActions;
+        }
+
+        public BankCardModel ActiveBankCard()
+        {
+            return this.activeCard;
+        }
+
+        public int CashBinAmount()
+        {
+            return this.cashBinAmount;
+        }
+
+        public void AddBank(string bank)
+        {
+            this.acceptedBanks.Add(bank);
+        }
+
+        public void RemoveBank(string bank)
+        {
+            this.acceptedBanks.Remove(bank);
+        }
+
+        public List<string> AcceptedBanks()
+        {
+            return this.acceptedBanks;
         }
 
         private bool IsCardAccepted(BankCardModel bankCard)

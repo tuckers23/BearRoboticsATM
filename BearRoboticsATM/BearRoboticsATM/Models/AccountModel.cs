@@ -10,6 +10,10 @@
             this.accountNumber = accountNumber;
             this.balance = balance;
         }
+        public int GetAccountNumber()
+        {
+            return this.accountNumber;
+        }
 
         public int GetBalance()
         { 

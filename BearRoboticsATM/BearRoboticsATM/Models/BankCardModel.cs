@@ -7,6 +7,7 @@
         private List<AccountModel> accounts;
         private int pinAttempts;
         private bool lockedOut;
+        private AccountModel? activeAccount= null;
 
         public BankCardModel(string bankName, List<AccountModel> accounts)
         {
@@ -64,6 +65,16 @@
         public void AddAccount(AccountModel account)
         {
             this.accounts.Add(account);
+        }
+
+        public void SelectAccount(AccountModel account)
+        {
+            this.activeAccount = account;
+        }
+
+        public AccountModel? GetActiveAccount()
+        {
+            return this.activeAccount;
         }
     }
 }
