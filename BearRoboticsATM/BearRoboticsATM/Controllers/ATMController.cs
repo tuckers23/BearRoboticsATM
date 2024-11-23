@@ -1,56 +1,56 @@
+using BearRoboticsATM.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BearRoboticsATM.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ATMController : ControllerBase
+    public class ATMController : Controller
     {
-        private static readonly string[] ATMOptions = new string[] { "See Balance", "Deposit", "Withdraw" };
-
         public ATMController()
         {
             //todo
         }
 
         [HttpGet]
-        public bool ValidCard(string cardNumber)
+        public ActionResult<bool> ValidCard(string cardNumber)
         {
             //todo
             return false;
         }
 
         [HttpGet]
-        public bool InsertPIN(int pin)
+        public ActionResult<bool> InsertPIN(int pin)
         {
-            //todo
             return false;
         }
 
         [HttpGet]
-        public string SelectAccount()
+        public ActionResult<string> SelectAccount()
         {
             //todo
             return "Account Name";
         }
 
         [HttpGet]
-        public int SeeBalance()
+        public ActionResult<int> SeeBalance()
         {
             //todo
             return 0;
         }
 
         [HttpPost]
-        public void Deposit()
+        public ActionResult Deposit()
         {
             //todo
+            return View();
         }
 
         [HttpPost]
-        public void Withdraw()
+        public ActionResult Withdraw()
         {
             //todo
+            return View();
         }
     }
 }
