@@ -61,18 +61,19 @@ namespace BearRoboticsATM.Controllers
         [HttpPost]
         public ActionResult Deposit(int amount)
         {
-            atm.DepositCash(amount);
+            int newBalance= atm.DepositCash(amount);
             //todo: View for successful Deposit
-            return View();
+            return View(newBalance);
         }
 
         [HttpPost]
         public ActionResult Withdraw(int amount)
         {
-            if (atm.WithdrawCash(amount))
+            int newBalance = atm.WithdrawCash(amount);
+            if(newBalance!= -1)
             {
                 //todo: View for successful Withdraw
-                return View();
+                return View(newBalance);
             }
             else
             {

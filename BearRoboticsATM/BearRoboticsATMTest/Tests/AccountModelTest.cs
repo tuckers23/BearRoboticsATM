@@ -30,16 +30,14 @@ namespace BearRoboticsATMTest.Tests
         public void AccountModel_WithdrawSucceed()
         {
             var account = new AccountModel(accountNumber, balance);
-            account.Withdraw(withdrawAmountSucced);
-            Assert.AreEqual(balance - withdrawAmountSucced, account.GetBalance());
+            Assert.AreEqual(account.Withdraw(withdrawAmountSucced), account.GetBalance());
         }
 
         [TestMethod]
         public void AccountModel_WithdrawFail()
         {
             var account = new AccountModel(accountNumber, balance);
-            account.Withdraw(withdrawAmountFail);
-            Assert.AreEqual(balance, account.GetBalance());
+            Assert.AreEqual(-1, account.Withdraw(withdrawAmountFail));
         }
     }
 }

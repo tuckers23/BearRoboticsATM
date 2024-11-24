@@ -65,8 +65,7 @@ namespace BearRoboticsATMTest.Tests
             var atm = new ATMModel(acceptedBanks, cashBinAmount);
             atm.InputPin(acceptedBankCard, dummyPin);
             atm.SelectAccount(accountModel);
-            atm.WithdrawCash(withdrawAmount);
-            Assert.AreEqual(accountModel.GetBalance(), atm.ActiveBankCard().GetActiveAccount().GetBalance());
+            Assert.AreEqual(accountModel.GetBalance()- withdrawAmount, atm.WithdrawCash(withdrawAmount));
         }
 
         [TestMethod]
@@ -75,7 +74,7 @@ namespace BearRoboticsATMTest.Tests
             var atm = new ATMModel(acceptedBanks, cashBinAmount);
             atm.InputPin(acceptedBankCard, dummyPin);
             atm.SelectAccount(accountModel);
-            Assert.AreEqual(false, atm.WithdrawCash(overWithdrawAmount));
+            Assert.AreEqual(-1, atm.WithdrawCash(overWithdrawAmount));
         }
 
         [TestMethod]
@@ -94,8 +93,7 @@ namespace BearRoboticsATMTest.Tests
             var atm = new ATMModel(acceptedBanks, cashBinAmount);
             atm.InputPin(acceptedBankCard, dummyPin);
             atm.SelectAccount(accountModel);
-            atm.DepositCash(depositAmount);
-            Assert.AreEqual(accountModel.GetBalance(), atm.ActiveBankCard().GetActiveAccount().GetBalance());
+            Assert.AreEqual(accountModel.GetBalance()+ depositAmount, atm.DepositCash(depositAmount));
         }
 
         [TestMethod]

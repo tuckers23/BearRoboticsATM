@@ -50,22 +50,24 @@ namespace BearRoboticsATM.Models
             this.activeCard.SelectAccount(account);
         }
 
-        public bool WithdrawCash(int amount)
+        public int WithdrawCash(int amount)
         {
             if(amount> this.cashBinAmount)
             {
                 //todo: logic for cashBin check
-                return false;
+                return -1;
             }
-            this.activeCard.GetActiveAccount().Withdraw(amount);
+            int newBalance= this.activeCard.GetActiveAccount().Withdraw(amount);
             this.cashBinAmount -= amount;
-            return true;
+            return newBalance;
         }
 
-        public void DepositCash(int amount)
+        public int DepositCash(int amount)
         {
-            this.activeCard.GetActiveAccount().Deposit(amount);
+            int newBalance= this.activeCard.GetActiveAccount().Deposit(amount);
             this.cashBinAmount += amount;
+
+            return newBalance;
         }
 
         public int ViewBalance()
