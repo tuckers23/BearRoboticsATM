@@ -14,19 +14,20 @@ namespace BearRoboticsATM.Models
             this.cashBinAmount = cashBinAmount;
         }
 
-        public void InsertCard(BankCardModel bankCard)
+        public bool InsertCard(BankCardModel bankCard)
         {
             if(IsCardAccepted(bankCard))
             {
                 if(bankCard.IsValidCard())
                 {
-                    //todo: prompt for pin
+                    return true;
                 }
                 else
                 {
-                    //todo: prompt for non valid card or locked out card
+                    return false;
                 }
             }
+            return false;
         }
 
         public bool InputPin(BankCardModel bankCard, int pin)
@@ -49,20 +50,27 @@ namespace BearRoboticsATM.Models
             this.activeCard.SelectAccount(account);
         }
 
-        public void WithdrawCash(int amount)
+        public bool WithdrawCash(int amount)
         {
             if(amount> this.cashBinAmount)
             {
                 //todo: logic for cashBin check
+                return false;
             }
             this.activeCard.GetActiveAccount().Withdraw(amount);
             this.cashBinAmount -= amount;
+            return true;
         }
 
         public void DepositCash(int amount)
         {
             this.activeCard.GetActiveAccount().Deposit(amount);
             this.cashBinAmount += amount;
+        }
+
+        public int ViewBalance()
+        {
+            return this.activeCard.GetActiveAccount().GetBalance();
         }
 
         public string[] GetATMActions()

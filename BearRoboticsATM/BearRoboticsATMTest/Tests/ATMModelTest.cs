@@ -10,6 +10,7 @@ namespace BearRoboticsATMTest.Tests
         protected BankCardModel? activeCard = null;
         protected int cashBinAmount = 50;
         protected int withdrawAmount = 20;
+        protected int overWithdrawAmount = 100;
         protected int depositAmount = 10;
         protected BankCardModel acceptedBankCard = new BankCardModel("ABank", new List<AccountModel>() { new AccountModel(123, 123)});
         protected List<AccountModel> accetpedBankCardAccounts = new List<AccountModel>() { new AccountModel(123, 123) };
@@ -69,6 +70,15 @@ namespace BearRoboticsATMTest.Tests
         }
 
         [TestMethod]
+        public void ATMModel_WithdrawCash_Fail()
+        {
+            var atm = new ATMModel(acceptedBanks, cashBinAmount);
+            atm.InputPin(acceptedBankCard, dummyPin);
+            atm.SelectAccount(accountModel);
+            Assert.AreEqual(false, atm.WithdrawCash(overWithdrawAmount));
+        }
+
+        [TestMethod]
         public void ATMModel_DepositCash_CashBinAmount()
         {
             var atm = new ATMModel(acceptedBanks, cashBinAmount);
@@ -117,6 +127,29 @@ namespace BearRoboticsATMTest.Tests
             var atm = new ATMModel(acceptedBanks, cashBinAmount);
             atm.RemoveBank(acceptedBankCard.GetBankName());
             Assert.AreEqual(-1, atm.AcceptedBanks().IndexOf(acceptedBankCard.GetBankName()));
+        }
+
+        [TestMethod]
+        public void ATMModel_InsertCard_Accepted()
+        {
+            var atm = new ATMModel(acceptedBanks, cashBinAmount);
+            Assert.AreEqual(true, atm.InsertCard(acceptedBankCard));
+        }
+
+        [TestMethod]
+        public void ATMModel_InsertCard_Declined()
+        {
+            var atm = new ATMModel(acceptedBanks, cashBinAmount);
+            Assert.AreEqual(false, atm.InsertCard(nonAcceptedBankCard));
+        }
+
+        [TestMethod]
+        public void ATMModel_ViewBalance()
+        {
+            var atm = new ATMModel(acceptedBanks, cashBinAmount);
+            atm.InputPin(acceptedBankCard, dummyPin);
+            atm.SelectAccount(accountModel);
+            Assert.AreEqual(accountModel.GetBalance(), atm.ViewBalance());
         }
     }
 }
