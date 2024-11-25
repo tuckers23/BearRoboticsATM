@@ -11,6 +11,7 @@ namespace BearRoboticsATM.Controllers
         public ActionResult ATMStart()
         {
             atm = new ATMModel(new List<string> { "ABank", "BBank", "CBank" }, 200);
+            //todo: view for prompting user to insert card
             return View();
         }
 
@@ -31,7 +32,7 @@ namespace BearRoboticsATM.Controllers
         }
 
         [HttpGet]
-        public ActionResult<bool> InsertPIN(BankCardModel bankCard, int pin)
+        public ActionResult InputPIN(BankCardModel bankCard, int pin)
         {
             if(atm.InputPin(bankCard, pin))
             {
@@ -39,11 +40,15 @@ namespace BearRoboticsATM.Controllers
                 //todo: view for selecting account
                 return View(accounts);
             }
+            else if(!bankCard.IsValidCard())
+            {
+                //todo: message for locked out
+            }
             return View();
         }
 
         [HttpGet]
-        public ActionResult<string[]> SelectAccount(AccountModel account)
+        public ActionResult SelectAccount(AccountModel account)
         {
             atm.SelectAccount(account);
             //todo: View with buttons for each action this ATM can perfom (currently: View Balance, Withdraw, Deposit)
@@ -51,7 +56,7 @@ namespace BearRoboticsATM.Controllers
         }
 
         [HttpGet]
-        public ActionResult<int> SeeBalance()
+        public ActionResult SeeBalance()
         {
             int accountBalance = atm.ViewBalance();
             //todo: View for displaying balance of an account
@@ -78,7 +83,7 @@ namespace BearRoboticsATM.Controllers
             else
             {
                 //todo: View for if the ATM does not have enough cash in the bin
-                return View();
+                return View(newBalance);
             }
         }
     }

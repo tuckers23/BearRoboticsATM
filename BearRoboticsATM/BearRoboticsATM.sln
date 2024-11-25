@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BearRoboticsATM", "BearRobo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BearRoboticsATMTest", "BearRoboticsATMTest\BearRoboticsATMTest.csproj", "{409FD21D-B695-45BD-AEBD-A6B0A277B2E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BearRoboticsATMSampleRun", "BearRoboticsATMSampleRun\BearRoboticsATMSampleRun.csproj", "{33133144-6377-45EE-B825-41DA11467A7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{409FD21D-B695-45BD-AEBD-A6B0A277B2E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{409FD21D-B695-45BD-AEBD-A6B0A277B2E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{409FD21D-B695-45BD-AEBD-A6B0A277B2E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33133144-6377-45EE-B825-41DA11467A7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33133144-6377-45EE-B825-41DA11467A7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33133144-6377-45EE-B825-41DA11467A7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33133144-6377-45EE-B825-41DA11467A7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

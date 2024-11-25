@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="BuildTarget">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BearRoboticsATM\BearRoboticsATM.csproj" />
+  </ItemGroup>
+
+	<Target Name="BuildTarget">
+		<Message Text="Build selected" Importance="high"/>
+	</Target>
+</Project>

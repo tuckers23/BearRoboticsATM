@@ -67,8 +67,6 @@ C:\Users\clapp\source\repos\BearRoboticsATM\BearRoboticsATM\BearRoboticsATM\obj\
 C:\Users\clapp\source\repos\BearRoboticsATM\BearRoboticsATM\BearRoboticsATM\obj\Debug\net9.0\BearRoboticsATM.pdb
 C:\Users\clapp\source\repos\BearRoboticsATM\BearRoboticsATM\BearRoboticsATM\obj\Debug\net9.0\BearRoboticsATM.genruntimeconfig.cache
 C:\Users\clapp\source\repos\BearRoboticsATM\BearRoboticsATM\BearRoboticsATM\obj\Debug\net9.0\ref\BearRoboticsATM.dll
-C:\Users\clapp\source\repos\BearRoboticsATM\BearRoboticsATM\BearRoboticsATM\obj\Debug\net9.0\BearRoboticsATM.RazorAssemblyInfo.cache
-C:\Users\clapp\source\repos\BearRoboticsATM\BearRoboticsATM\BearRoboticsATM\obj\Debug\net9.0\BearRoboticsATM.RazorAssemblyInfo.cs
 C:\Users\clapp\source\repos\BearRoboticsATM\BearRoboticsATM\BearRoboticsATM\bin\Debug\net9.0\Humanizer.dll
 C:\Users\clapp\source\repos\BearRoboticsATM\BearRoboticsATM\BearRoboticsATM\bin\Debug\net9.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\clapp\source\repos\BearRoboticsATM\BearRoboticsATM\BearRoboticsATM\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
