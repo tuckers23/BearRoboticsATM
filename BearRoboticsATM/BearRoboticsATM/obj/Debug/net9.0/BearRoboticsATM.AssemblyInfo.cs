@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BearRoboticsATM")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8fdff0f4c244cec379ca55fde20fac563ed70ecc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6740dd6eb719d25c60b2e1dec2ee1f148b893c85")]
 [assembly: System.Reflection.AssemblyProductAttribute("BearRoboticsATM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BearRoboticsATM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

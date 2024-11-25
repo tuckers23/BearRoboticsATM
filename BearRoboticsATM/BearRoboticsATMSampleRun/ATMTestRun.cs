@@ -52,7 +52,7 @@ namespace BearRoboticsATM
                     {
                         continue;
                     }
-                    selectedAccount = accounts[ - 1];
+                    selectedAccount = accounts[inputAccount- 1];
                     controller.SelectAccount(selectedAccount);
                 }
 
